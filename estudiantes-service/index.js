@@ -8,7 +8,6 @@ const app = express();
 const PORT = 3000; // ¡Un puerto diferente!
 
 // Middleware para entender JSON
-app.use(express.json());
 app.use(cors());
 app.use(express.json());
 

@@ -1,12 +1,17 @@
+// 1. Quita RouterOutlet de aquí
+// 1. Quita RouterOutlet de aquí
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
+import { RegistroComponent } from './components/registro/registro';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  // 2. Y quítalo de aquí también
+  imports: [RegistroComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected title = 'frontend-angular';
+export class AppComponent {
+  title = 'frontend-angular';
 }

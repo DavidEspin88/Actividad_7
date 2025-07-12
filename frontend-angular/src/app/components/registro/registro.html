@@ -1,0 +1,48 @@
+<div class="container">
+  
+  <!-- Formulario de Registro -->
+  <div class="card form-card">
+    <h2>Registrar Nuevo Estudiante</h2>
+    <!-- (ngSubmit) ejecuta el método cuando se envía el formulario -->
+    <form (ngSubmit)="registrarEstudiante()">
+      <div class="form-group">
+        <label for="nombre">Nombre del Estudiante:</label>
+        <!-- [(ngModel)] crea un enlace de datos de dos vías con la variable nuevoEstudiante.nombre -->
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoEstudiante.nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="carreraId">ID de la Carrera:</label>
+        <p class="info">1: Ing. Software</p>
+        <p class="info">2: Medicina</p>
+        <p class="info">3: Diseño Gráfico</p>
+        
+        <!-- [(ngModel)] enlaza con nuevoEstudiante.carreraId -->
+        <input type="number" id="carreraId" name="carreraId" [(ngModel)]="nuevoEstudiante.carreraId" required>
+      </div>
+      <button type="submit">Registrar</button>
+    </form>
+  </div>
+
+  <!-- Lista de Estudiantes -->
+  <div class="card list-card">
+    <h2>Estudiantes Registrados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Carrera</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- *ngFor recorre el array de estudiantes y crea una fila por cada uno -->
+        <tr *ngFor="let estudiante of estudiantes">
+          <td>{{ estudiante.id }}</td>
+          <td>{{ estudiante.nombre }}</td>
+          <td>{{ estudiante.nombreCarrera }} (ID: {{ estudiante.carreraId }})</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
