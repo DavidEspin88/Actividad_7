@@ -1,13 +1,13 @@
 // 1. Importar Express
 const express = require('express');
-
-// 2. Crear una instancia de Express
+const cors = require('cors'); 
 const app = express();
 
 // 3. Definir el puerto. Usaremos uno diferente para cada servicio.
 const PORT = 3001;
 
 // Middleware para que nuestro servidor entienda JSON
+app.use(cors());
 app.use(express.json());
 
 // 4. Datos de ejemplo (en un proyecto real, esto vendría de una base de datos)
@@ -38,5 +38,5 @@ app.get('/carreras/:id', (req, res) => {
 
 // 6. Iniciar el servidor
 app.listen(PORT, () => {
-    console.log(`Carreras-Service escuchando en el puerto ${PORT}`);
+    console.log(`🎓 Carreras-Service escuchando en el puerto ${PORT}`);
 });

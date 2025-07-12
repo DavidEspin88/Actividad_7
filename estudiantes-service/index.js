@@ -1,12 +1,15 @@
 // 1. Importar dependencias
 const express = require('express');
 const axios = require('axios'); // Para hacer peticiones a otros servicios
+const cors = require('cors'); 
 
 // 2. Crear instancia de Express
 const app = express();
 const PORT = 3000; // ¡Un puerto diferente!
 
 // Middleware para entender JSON
+app.use(express.json());
+app.use(cors());
 app.use(express.json());
 
 // URL de nuestro servicio de carreras
